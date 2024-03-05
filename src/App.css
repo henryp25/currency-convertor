@@ -10,9 +10,32 @@ h1{
     font-size: 4em;
     color: #61dafb;
 }
+h2{
+    display: flex;
+    justify-content: center;
+}
 
 .currency-box{
     display: flex;
     justify-content: center;
     padding: 20px;
+}
+
+.output{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    height: 100px;
+}
+
+/* Conversion Data */
+.conversion-box{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    margin: 5px;
+}
+.conversion-box p{
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
 }

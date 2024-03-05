@@ -1,9 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
+import '../App.css';
+import { useState } from 'react';
+import CurrencyConverter from './CurrencyConverter';
 
-const CurrentInput = () => {
-  
-}
 
 function App() {
   return (
@@ -17,14 +15,10 @@ function App() {
         <br></br>With an intuitive interface, users can easily select their desired currencies, input the amount to be converted, and instantly receive the equivalent value in the target currency. Our converter updates continuously to reflect the latest market rates, ensuring you have the most current information at your fingertips. Perfect for travelers, traders, and anyone looking to make informed financial decisions across borders.
       </p>
     </div>
-      <div class="currency-box">
+      <div>
         <p>
         </p>
-        <input type="text" />
-        <button>Convert Currency</button>
-      </div>
-      <div class="output">
-        <p>Amount in USD is equal to 0</p>
+        <CurrencyConverter />
       </div>
     </div>
   );
