@@ -15,20 +15,36 @@ h2{
     justify-content: center;
 }
 
+/* Conversion Box/input */
 .currency-box{
     display: flex;
     justify-content: center;
+    flex-direction: column;
     padding: 20px;
 }
 
+.input-box{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5px;
+}
+.user-input{
+    padding: 5px;
+    margin: auto;
+    font-size: 20px;
+    width: 100px;
+    text-align: center;
+}
+
+
+/* Conversion Data/Output */
 .output{
     display: flex;
     flex-direction: column;
     padding: 5px;
     height: 100px;
 }
-
-/* Conversion Data */
 .conversion-box{
     display: flex;
     justify-content: center;
