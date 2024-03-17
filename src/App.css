@@ -18,18 +18,34 @@ h2{
 /* Conversion Box/input */
 .currency-box{
     display: flex;
-    justify-content: center;
-    flex-direction: column;
     padding: 20px;
 }
 
-.input-box{
+.currency-box h2{
     display: flex;
     justify-content: center;
-    flex-direction: column;
     padding: 5px;
+    margin: 5px;
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    flex-direction: column;
 }
+
+
 .user-input{
+    background-color: antiquewhite;
+    padding: 5px;
+    border-bottom: 1px solid black;
+
+}
+.user-input input{
+    padding: 5px;
+    margin: auto;
+    font-size: 20px;
+    width: 100px;
+    text-align: center;
+}
+.user-input option{
     padding: 5px;
     margin: auto;
     font-size: 20px;

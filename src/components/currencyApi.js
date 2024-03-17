@@ -1,24 +1,26 @@
 import React from 'react'
 import axios from 'axios'
+import Freecurrencyapi from '@everapi/freecurrencyapi-js';
+const freecurrencyapi = new Freecurrencyapi('fca_live_YOHb38QeHG0e1gmE6iu8TcTyKLbMPByQlycD4quh');
+
 
 export default async function currencyApi(amount, fromCurrency, toCurrency) {
   // const apiKey = process.env.CURRENCY_API_KEY
-  const apiKey =  "dbb52aab83891f78fa6e"
+  const apiKey =  "fca_live_YOHb38QeHG0e1gmE6iu8TcTyKLbMPByQlycD4quh"
   fromCurrency = encodeURIComponent(fromCurrency);
   toCurrency = encodeURIComponent(toCurrency);
-  var query = fromCurrency + '_' + toCurrency;
-
-  var url = 'https://free.currconv.com/api/v7/convert?q='
-            + query + '&compact=ultra&apiKey=' + apiKey;
+  
+  var url = 'https://api.freecurrencyapi.com/v1/latest?apikey=' + apiKey + `&currencies=${toCurrency}&base_currency=${fromCurrency}`
   return await axios.get(url)
   .then(
-    function(res){
-        var val = res.data[query];
+    function(res){  
+        var val = JSON.parse(JSON.stringify(res.data.data[toCurrency]));
+        console.log(val)
         if(val){
-          var total = val * amount;
-          return Math.round(total * 100) / 100;
+          var total = amount * val;
+          return Math.round(total);
         } else {
-          var err = new Error("Value not found for " + query);
+          var err = new Error("Value not found for " + fromCurrency);
           console.log(err);
         }
     })
