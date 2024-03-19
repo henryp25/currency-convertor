@@ -1,13 +1,34 @@
 import React, { useState } from 'react';
 import currencyApi from './currencyApi';
 
+const fetchCurrencyData = (setCurrencyList) => {
+    const apiKey =  "fca_live_YOHb38QeHG0e1gmE6iu8TcTyKLbMPByQlycD4quh"
+    var url = 'https://api.freecurrencyapi.com/v1/currencies?apikey=' + apiKey
+    axios.get(url).then((res) => {
+        const data = res.data.data;
+        let currencyList = Object.entries(data).map(([code,details]) => ({
+            id: index,
+            code,
+            ...details
+        }))
+        setCurrencyList(currencyList)
+    }).catch((err) => {
+        console.log(err)
+    } )
+}
+
 
 function CurrencyConverter() {
     let conversion;
+    //setting state for different currencies
+    const [currencies, setCurrencies] = useState([]);
+    useEffect(() =>{
+        fetchCurrencyData(setCurrencies)
+    }, [])
+
     //Setting state for user input
     const [input, setInput] = useState(0);
     const [conversionResult, setConverisonResult] = useState(0)
-
     const [currencySymbol, setCurrencySymbol] = useState('$') //['USD', 'EUR', 'GBP', 'JPY', 'CAD', 'AUD', 'CHF', 'CNY'
 
     //Setting state for conversion result
@@ -65,14 +86,9 @@ function CurrencyConverter() {
           <tr className='user-input'>
             <label for="fromCurrency">Select the currency to convert from:</label>
                 <select onChange={handleFromCurrency} id="currency" name="currency">
-                  <option value="USD">United States Dollar (USD)</option>
-                  <option value="EUR">Euro (EUR)</option>
-                  <option value="GBP">British Pound Sterling (GBP)</option>
-                  <option value="JPY">Japanese Yen (JPY)</option>
-                  <option value="CAD">Canadian Dollar (CAD)</option>
-                  <option value="AUD">Australian Dollar (AUD)</option>
-                  <option value="CHF">Swiss Franc (CHF)</option>
-                  <option value="CNY">Chinese Yuan (CNY)</option>
+                (currencies.map(currency) {
+                    <option value={currency.code}></option>
+                })
                 </select>
           </tr>
           <tr className='user-input'>
