@@ -1,6 +1,6 @@
 import '../App.css';
 import { useState } from 'react';
-import CurrencyConverter from './CurrencyConverter';
+import CurrencyConverter from '../components/CurrencyConverter';
 
 
 function App() {
@@ -16,8 +16,6 @@ function App() {
       </p>
     </div>
       <div>
-        <p>
-        </p>
         <CurrencyConverter />
       </div>
     </div>
