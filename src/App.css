@@ -15,15 +15,30 @@ h2{
     justify-content: center;
 }
 
+.currency-converter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #5a606c;
+    color: #000000;
+}
+
+
 /* Conversion Box/input */
+
 .currency-box{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 20px;
 }
 
 .currency-box h2{
-    display: flex;
-    justify-content: center;
     padding: 5px;
     margin: 5px;
     font-size: 40px;
@@ -31,12 +46,39 @@ h2{
     flex-direction: column;
 }
 
+.selectionTable{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    margin: 5px;
+    border-style: ridge;
+    border: 3px black;
+    border-radius: 5px;
+    background-color: #61dafb;
+    color: #282c34;
+}
+
+.input-box{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
 
 .user-input{
+    display: flex;
+    flex-direction: column;
     background-color: antiquewhite;
-    padding: 5px;
     border-bottom: 1px solid black;
-
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+}
+.user-input select{
+    padding: 5px;
+    margin: auto;
+    font-size: 20px;
+    width: 100px;
+    text-align: center;
 }
 .user-input input{
     padding: 5px;
@@ -53,21 +95,53 @@ h2{
     text-align: center;
 }
 
+.user-input label{
+    padding: 5px;
+    margin: auto;
+    font-size: 28px;
+    text-align: center;
+    font-weight: bold;}
+
+#currency{
+    width: auto;
+}
 
 /* Conversion Data/Output */
-.output{
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    height: 100px;
-}
 .conversion-box{
     display: flex;
     justify-content: center;
     padding: 5px;
     margin: 5px;
+    border-radius: 5px;
+    background-color: #282c34;
+    color: #61dafb;
 }
 .conversion-box p{
-    font-size: 40px;
+    font-size: 55px;
     font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-display: flex;
+    justify-content: center;
+}
+
+/* Conversion Button */
+.button-container{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    margin: 5px;
+}
+
+.curr-button{
+    padding: 5px;
+    margin: 5px;
+    font-size: 20px;
+    background-color: #61dafb;
+    color: #282c34;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.curr-button:hover{
+    background-color: #282c34;
+    color: #61dafb;
 }

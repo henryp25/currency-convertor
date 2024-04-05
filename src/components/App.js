@@ -1,12 +1,13 @@
 import '../App.css';
-import { useState } from 'react';
+import ErrorBoundary from '../components/ErrorBoundary';
+
 import CurrencyConverter from '../components/CurrencyConverter';
 
 
 function App() {
   return (
     <div className="App">
-      <div class="header">
+      <div className="header">
         <h1>Currency Converter</h1>
       </div>
     <div className='productDescription'>
@@ -16,7 +17,10 @@ function App() {
       </p>
     </div>
       <div>
+     <ErrorBoundary>
         <CurrencyConverter />
+     </ErrorBoundary>
+
       </div>
     </div>
   );

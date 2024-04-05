@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import React from 'react'
-import CurrencyContext from './CurrencyContext';
+import CurrencyContext  from './CurrencyContext';
 
 
 
@@ -19,15 +19,15 @@ function CurrencyOutputComponent({ convertClick, currencyName, conversionResult 
     })
   }, [currencyName])
   return (
-    <div class="output">
-        <tr className='button'>
-        <button onClick={convertClick}>Convert</button>
-        </tr>
-        <h2>Amount in USD is equal to </h2>
-        <br></br>
-        <div className='conversion-box'>
-          <p>{currencySymbol}{conversionResult}</p>
-        </div>
+    <div>
+          <div className='button-container'>
+                <button onClick={convertClick} className="curr-button">Convert</button>
+          </div>
+          <h2>Amount in {currencyName} is equal to </h2>
+          <br></br>
+          <div className='conversion-box'>
+            <p>{currencySymbol}:{conversionResult}</p>
+          </div>
     </div>
   )
 }

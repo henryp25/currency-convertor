@@ -4,7 +4,6 @@ import CurrencyProvider from '../components/currencyComponents/CurrencyProvider'
 import CurrencyOutputComponent from '../components/currencyComponents/CurrencyOutputComponent';
 import CurrencySelectionComponent from '../components/currencyComponents/CurrencySelectionComponent';
 
-
 function CurrencyConverter() {
   
     let conversion;
@@ -35,14 +34,13 @@ function CurrencyConverter() {
     const handleToCurrency = (e) => {
       setToCurrency(e.target.value);
     }
-  return (
+  return (  
     <CurrencyProvider>
-      <div class="currency-box">
+    <div className='currency-converter'>
         <CurrencySelectionComponent handleCurrencyInput={handleCurrencyInput} input={input} handleFromCurrency={handleFromCurrency} handleToCurrency={handleToCurrency} />       
-      </div>
-      <div>
+
         <CurrencyOutputComponent convertClick={convertClick} conversionResult={conversionResult} currencyName={toCurrency} />
-      </div>
+    </div>
       {/* //Currency Results */}
     </CurrencyProvider>
   );
